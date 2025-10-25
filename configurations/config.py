@@ -47,13 +47,19 @@ from dotenv import load_dotenv
 import os
 
 # Load the .env file
-load_dotenv()
+# load_dotenv()
 
 # Access variables
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+# OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+import streamlit as st
+import os
+
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
+
 LLM_MODEL_NAME = config["llm"]["model_name"]
 LLM_TEMPERATURE = config["llm"]["temperature"]
-OPENAI_API_KEY = config["llm"]["api_key"]
+OPENAI_API_KEY = OPENAI_API_KEY
 
 # ------------------------------
 # Retriever settings
@@ -71,3 +77,4 @@ TOP_K = config["retriever"].get("top_k", 3)
 # Logging defaults (used in core/logger.py)
 LOG_LEVEL = config.get("loggers", {}).get("level", "INFO")
 LOG_FORMAT = config.get("loggers", {}).get("format", "%(asctime)s - %(levelname)s - %(message)s")
+
