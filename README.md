@@ -12,6 +12,9 @@ The RAG Legal Assistant is an AI-powered solution designed for law firms, legal 
 
 *(Replace with your deployed Streamlit URL once live)*
 
+<img width="1544" height="659" alt="Screenshot 2025-10-25 142926" src="https://github.com/user-attachments/assets/03624042-9672-4c91-8f70-cb278ceaf759" />
+
+
 ---
 
 ## Features
