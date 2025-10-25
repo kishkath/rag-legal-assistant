@@ -8,7 +8,7 @@ The RAG Legal Assistant is an AI-powered solution designed for law firms, legal 
 ## Streamlit App URL
 
 
-**Access the app here:** [https://raglawai.streamlit.app/]
+**Access the app here:** https://raglawai.streamlit.app/
 
 *(Replace with your deployed Streamlit URL once live)*
 
