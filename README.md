@@ -1,6 +1,3 @@
-# rag-legal-assistant
-A legal assistant which is developed by incorporating RAG mechanism via langchain
-
 # 📚 RAG Legal Assistant (Streamlit UI)
 
 **Business Overview:**  
