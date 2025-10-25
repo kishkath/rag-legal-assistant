@@ -131,13 +131,15 @@ def build_rag_chain(top_k: int = TOP_K, re_rank: bool = True) -> RetrievalQA:
     # ------------------------------
     # Ensure API key
     # ------------------------------
-    os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
+    import streamlit as st
+    # os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
+    os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
     # LLM instance
     llm = ChatOpenAI(
         model_name=LLM_MODEL_NAME,
         temperature=LLM_TEMPERATURE,
-        openai_api_key=OPENAI_API_KEY,
+        openai_api_key=st.secrets["OPENAI_API_KEY"],
     )
 
     # ------------------------------
