@@ -11,7 +11,6 @@ from configurations.config import CHROMA_PERSIST_DIR, OPENAI_API_KEY, TOP_K
 from data.dataset_loader import load_dataset_texts
 from data.embedding_store import store_embeddings_in_chroma
 from rag.chain_builder import build_rag_chain
-from rag.retriever import HybridRetriever, LCCompatibleHybridRetriever
 from rag.evaluator import evaluate_answer
 
 st.set_page_config(page_title="RAG Legal Assistant", layout="wide")
@@ -42,12 +41,12 @@ def init_qa_chain():
 
     texts, metadatas = init_chroma_embeddings()
 
-    # Initialize retriever if we have texts loaded
-    if texts:
-        hybrid = HybridRetriever(texts_corpus=texts)
-        retriever = LCCompatibleHybridRetriever(hybrid=hybrid)
-    else:
-        retriever = None  # QA chain uses its own internal retriever
+    # # Initialize retriever if we have texts loaded
+    # if texts:
+    #     hybrid = HybridRetriever(texts_corpus=texts)
+    #     retriever = LCCompatibleHybridRetriever(hybrid=hybrid)
+    # else:
+    #     retriever = None  # QA chain uses its own internal retriever
 
     qa_chain = build_rag_chain(top_k=TOP_K)
     logger.info("RAG system initialized successfully.")
